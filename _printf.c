@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	int i, j, cont, match = 0;
+	int i, j, cont = 0, match = 0;
 
 	p_func opt[] = {{"c", p_char}, {"s", p_str}, {"i", p_int},
 	{"d", p_float}, {0, 0}};

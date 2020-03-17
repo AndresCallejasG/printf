@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdarg.h>
-#include <stdio.h>
 /**
  * p_char - Prints a character
  * @valist: va_list
