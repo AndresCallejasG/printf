@@ -10,27 +10,58 @@
 Print data introduced by argument based on a format.
 FORMAT controls the output as in C printf. Interpreted seciences are:
 
-.B %[FORMAT]
+.B %[FORMAT] - Syntax that specifies the start of a new format for the output.
 
-.B Diferent types of format:
-.B %:
-print a single %.
+.I Diferent types of format:
 
-.B c:
-char format (character).
+.B %%:   
+print a single %. - specifies that the function identifies the format start (%) as a string and prints it as such.
 
-.B s:
-string format (string).
+.B %c:   
+Char format (character) - specifies that it will print a character corresponding to its ASCII code.
 
-.B d:
-decimal format (int) - specifies a signed decimal integer.
+.B %s:   
+String format (string) - specifies to print a character string.
 
-.B i:
-int format (int) - specifies an integer.
+.B %d, %i:   
+int format (int) - specifies an integer. Signed decimal conversion of an integer
+
 .SH EXAMPLES
-.B _printf("%i", variableInt);
-This function print the variable of type INT, 
+int main()
+{
+    char character = 'x';
+    char *name = "Holberton";
+    int number = 15;
+
+    _printf("%c, ", character);
+    _printf("%s, ", name);
+    _printf("%i.\\n", number);
+
+}
+
+.B OUTPUT: 
+x, Holberton, 15.
+
+This function print diferent types of variables, like char, int, or even character string.
 in case the variable type is different, the format must correspond to the type of variable put in the function.
+
+We should note that in the output the format is replaced by the value of the specified variable, in case there is more than a single variable there must be a type of format wherever it is printed, like this:
+
+int main()
+{
+    char character = 'x';
+    char *name = "Holberton";
+    int number = 15;
+
+    _printf("%c, %s, %i.\\n", character, name, number);
+
+}
+
+.B OUTPUT:
+x, Holberton, 15.
+
+It is the same output, only with one function call, in case we need to insert a new line, we can use the option '\\n' in the place where we need to jump, and the output prints a jump in the place where we find the option '\\n'.
+
 .SH RETURN VALUE
 Upon successful return, these functions return the number of
 characters printed (excluding the null byte used to end output to strings).
