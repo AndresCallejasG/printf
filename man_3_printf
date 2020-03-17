@@ -1,0 +1,38 @@
+./" This is the manpage of the _printf function to print with format */
+.TH _PRINTF 1 "17 Mar 2020" "GNU" "_printf man page"
+.SH NAME
+.B _printf
+- print with especific format
+.SH SYNOPSIS
+.B _printf
+.I FORMAT [ARGUMENT]...
+.SH DESCRIPTION
+Print data introduced by argument based on a format.
+FORMAT controls the output as in C printf. Interpreted seciences are:
+
+.B %[FORMAT]
+
+.B Diferent types of format:
+.B %:
+print a single %.
+
+.B c:
+char format (character).
+
+.B s:
+string format (string).
+
+.B d:
+decimal format (int) - specifies a signed decimal integer.
+
+.B i:
+int format (int) - specifies an integer.
+.SH EXAMPLES
+.B _printf("%i", variableInt);
+This function print the variable of type INT, 
+in case the variable type is different, the format must correspond to the type of variable put in the function.
+.SH RETURN VALUE
+Upon successful return, these functions return the number of
+characters printed (excluding the null byte used to end output to strings).
+.SH AUTHOR
+Written by Andrés Callejas and Felipe Rodríguez.
