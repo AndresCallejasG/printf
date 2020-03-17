@@ -34,7 +34,7 @@ int p_int(va_list valist)
 int p_dint(va_list valist)
 {
 	int size = p_int(valist);
-	
+
 	return (size);
 }
 /**
