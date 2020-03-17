@@ -74,5 +74,7 @@ int print_int(int n)
 
 	if (n < 0)
 		return (size + 1);
+	else if (n == 0)
+		return (1);
 	return (size);
 }
