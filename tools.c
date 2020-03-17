@@ -72,5 +72,7 @@ int print_int(int n)
 	}
 	_putchar((num % 10) + '0');
 
+	if (n < 0)
+		return (size + 1);
 	return (size);
 }
