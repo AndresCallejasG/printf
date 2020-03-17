@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	int i, j, cont = 0, match = 0;
 
 	p_func opt[] = {{"c", p_char}, {"s", p_str}, {"i", p_int},
-	{"d", p_float}, {0, 0}};
+	{"d", p_dint}, {0, 0}};
 	if (format == 0)
 		return (-1);
 	va_start(valist, format);
@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 			_putchar(format[i]), cont++;
-		else if (format[i] == '%' && format[i + 1] != '%')
+		else if (format[i] == '%' && format[i + 1] != 0 &&
+		format[i + 1] != '%')
 		{
 			for (j = 0; opt[j].fmt != 0; j++)
 			{

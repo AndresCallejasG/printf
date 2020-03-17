@@ -23,7 +23,7 @@ int print_int(int n);
 
 int p_char(va_list valist);
 int p_int(va_list valist);
-int p_float(va_list valist);
+int p_dint(va_list valist);
 int p_str(va_list valist);
 
 #endif

@@ -12,18 +12,7 @@ int p_char(va_list valist)
 	return (1);
 }
 /**
- * p_float - Prints a float
- * @valist: va_list
- * Return: none
- **/
-int p_float(va_list valist)
-{
-	double num = va_arg(valist, double);
-
-	return (num / 1);
-}
-/**
- * p_int - Prints a int
+ * p_int - Prints a int (%i)
  * @valist: va_list
  * Return: none
  **/
@@ -35,6 +24,17 @@ int p_int(va_list valist)
 
 	size = print_int(num);
 
+	return (size);
+}
+/**
+ * p_dint - Prints a int (%d)
+ * @valist: va_list
+ * Return: none
+ **/
+int p_dint(va_list valist)
+{
+	int size = p_int(valist);
+	
 	return (size);
 }
 /**
