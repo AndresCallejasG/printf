@@ -32,14 +32,14 @@ int _printf(const char *format, ...)
 					match = 1;
 				}
 			}
-			if (match != 1 )
+			if (match != 1)
 				_putchar('%'), cont++;
 			match = 0;
 		}
 		else if (format[i] == '%' && format[i + 1] == 0)
 			return (-1);
 		else if (format[i] == '%' && format[i + 1] != 0 &&
-		format[i + 1] == '%' )	
+		format[i + 1] == '%')
 		{
 			_putchar('%'), cont++, i++;
 		}
