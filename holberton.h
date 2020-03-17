@@ -25,5 +25,6 @@ int p_char(va_list valist);
 int p_int(va_list valist);
 int p_dint(va_list valist);
 int p_str(va_list valist);
+int p_rev(va_list valist);
 
 #endif
