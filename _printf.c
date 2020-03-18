@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 					cont += opt[j].f(valist);
 					i++;
 					match = 1;
+					break;
 				}
 			}
 			if (match != 1)
@@ -41,9 +42,7 @@ int _printf(const char *format, ...)
 			return (-1);
 		else if (format[i] == '%' && format[i + 1] != 0 &&
 		format[i + 1] == '%')
-		{
 			_putchar('%'), cont++, i++;
-		}
 	}
 	va_end(valist);
 	return (cont);
