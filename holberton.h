@@ -33,5 +33,6 @@ int p_oct(va_list valist);
 int p_hex(va_list valist);
 int p_hex_case(va_list valist);
 int p_un_int(va_list valist);
+int p_rot13(va_list valist);
 
 #endif
