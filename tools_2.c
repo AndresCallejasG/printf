@@ -14,6 +14,12 @@ int print_un_int(unsigned int n)
 	size = 0;
 	div = 1;
 
+	if (n == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	num_temp = num;
 	while (num_temp != 0)
 	{
@@ -32,7 +38,5 @@ int print_un_int(unsigned int n)
 	}
 	_putchar((num % 10) + '0');
 
-	if (n == 0)
-		return (1);
 	return (size);
 }
