@@ -19,14 +19,20 @@ int p_rot13(va_list valist)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		aux = 13 + s[i];
-
-		if ((aux > 'Z' && s[i] <= 'Z') || aux > 'z')
+		if ((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <= 'z'))
 		{
-			aux = aux % (90 + (32 * (97 / s[i])));
-			aux = aux + (65 + (32 * (97 / s[i]))) - 1;
+			aux = 13 + s[i];
+			if ((aux > 'Z' && s[i] <= 'Z') || aux > 'z')
+			{
+				aux = aux % (90 + (32 * (97 / s[i])));
+				aux = aux + (65 + (32 * (97 / s[i]))) - 1;
+			}
+			_putchar(aux);
 		}
-		_putchar(aux);
+		else
+		{
+			_putchar(s[i]);
+		}
 	}
 	return (i);
 }
