@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 				{
 					cont += opt[j].f(valist);
 					i++;
-					match = 1;
+					match = 1, break;
 				}
 			}
 			if (match != 1)
