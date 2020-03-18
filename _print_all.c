@@ -57,3 +57,18 @@ int p_str(va_list valist)
 	}
 	return (i);
 }
+/**
+ * p_un_int - Prints a unsigned int (%u)
+ * @valist: va_list
+ * Return: none
+ **/
+int p_un_int(va_list valist)
+{
+	int size = 0;
+
+	unsigned int num = va_arg(valist, unsigned int);
+
+	size = print_un_int(num);
+
+	return (size);
+}

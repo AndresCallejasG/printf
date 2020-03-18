@@ -78,3 +78,40 @@ int print_int(int n)
 		return (1);
 	return (size);
 }
+
+/**
+* base_conv - prints a string, in reverse
+* @num: int num
+* @base: base to convert
+* @mayus: for hex conversion - %x = 0 %X = 1
+*
+* Return: void
+*/
+
+int base_conv(unsigned int num, int base, int mayus)
+{
+	char chars[] = "0123456789ABCDEF";
+	char chars2[] = "0123456789abcdef";
+	char buffer[1024];
+	char *ptr;
+	int i = 1023, j = 0;
+
+	ptr = &buffer[1023];
+	*ptr = '\0';
+
+	do {
+		if (mayus)
+			*--ptr = chars[num % base];
+		else
+			*--ptr = chars2[num % base];
+		num /= base;
+		i--;
+	} while (num != 0);
+
+	for (j = i; buffer[j] != '\0'; j++)
+	{
+		_putchar(buffer[j]);
+	}
+
+	return (1023 - i);
+}

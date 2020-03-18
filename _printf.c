@@ -12,7 +12,8 @@ int _printf(const char *format, ...)
 	int i, j, cont = 0, match = 0;
 
 	p_func opt[] = {{"c", p_char}, {"s", p_str}, {"i", p_int},
-	{"d", p_dint}, {"r", p_rev}, {0, 0}};
+	{"d", p_dint}, {"r", p_rev}, {"b", p_bin}, {"o", p_oct},
+	{"x", p_hex}, {"X", p_hex_case}, {"u", p_un_int}, {0, 0}};
 	if (format == 0)
 		return (-1);
 	va_start(valist, format);
