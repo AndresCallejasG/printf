@@ -26,6 +26,29 @@ String format (string) - specifies to print a character string.
 .B %d, %i:   
 int format (int) - specifies an integer. Signed decimal conversion of an integer
 
+.B %r:
+Reverse string - prints an inverted text string.
+
+.B %u: 
+Print an unsigned int number.
+
+.B %x:
+Convert a number in to a hexadecimal format in lowercase.
+
+.B %X:
+Convert a number in to a hexadecimal formato in uppercase.
+
+.B %o:
+Conert a number in to a octal format.
+
+.B %b:
+Conver a number in to a binary format.
+
+%R: ROT13 - 
+is a simple cipher used to hide a text by replacing each letter with the letter that is thirteen places ahead in the alphabet. A becomes N, B becomes O, and so on to M, which becomes Z. Then the sequence is reversed: N becomes A, O becomes B, and so on to Z, which becomes METER.
+
+
+
 .SH EXAMPLES
 int main()
 {
@@ -61,6 +84,60 @@ int main()
 x, Holberton, 15.
 
 It is the same output, only with one function call, in case we need to insert a new line, we can use the option '\\n' in the place where we need to jump, and the output prints a jump in the place where we find the option '\\n'.
+
+.B Reverse a string
+
+int main() {
+    _printf("%r", "Hello");
+    
+}
+
+.B OUTPUT: 
+olleH
+
+
+.B Print a unsigned int
+
+int main() {
+    unsigned int number = 100;
+    _printf("%u", number );
+
+}
+
+.B OUTPUT
+100
+
+
+.B Convert a number in to hexadecimal form.
+
+int main() {
+    int number;
+    _printf("Lowercase hexadecimal: %x.\n", number );
+    _printf("Uppercase hexadecimal: %X.\n", number);
+    _printf("Octal: %u.\n", number);
+    _printf("Binary: %b.\n", number);
+    
+}
+
+.B OUTPUT
+Lowercase hexadecimal: a.
+Uppercase exadecimal: A.
+Octal: 12.
+Binary: 1010.
+
+
+
+.B ROT13 
+
+int main() {
+    char *p = 'Hello, World!';
+    _printf("%R", p);
+
+}
+
+
+.B OUTPUT:
+Uryyb, Jbeyq!
 
 .SH RETURN VALUE
 Upon successful return, these functions return the number of
